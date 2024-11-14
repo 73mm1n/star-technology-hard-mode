@@ -6,7 +6,7 @@
 	group: "28726466D987C725"
 	icon: "nuclearcraft:fission_reactor_controller"
 	id: "24D008972AF0082B"
-	order_index: 4
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{

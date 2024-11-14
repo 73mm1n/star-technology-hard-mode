@@ -42,7 +42,7 @@ materialRegistry(event => {
                 .color(0x954EAA)
                 .flags(plates, ring, rod, gear, small_gear, long_rod, rotor, bolt_and_screw, no_decomp)
                 .iconSet(METALLIC)
-                .blastTemp(2950, 'lowest', VHA('EV'), 2600);
+                .blastTemp(2950, 'low', VHA('EV'), 2600);
 
         //Tungsten Cubide Line
 
