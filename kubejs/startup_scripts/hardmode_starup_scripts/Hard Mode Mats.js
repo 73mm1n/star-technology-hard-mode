@@ -65,7 +65,7 @@ materialRegistry(event => {
 
         //EuCdNq+- Line
 
-        event.create('ionized', -1, -1, -1, null, '-', false);
+        event.create('ionized', -1, -1, -1, null, 'Ion', false);
 
         event.create('europium_cadmium_ionized_enriched_naquadah')
                 .ingot()
