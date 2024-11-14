@@ -13,10 +13,10 @@ materialRegistry(event => {
          event.create('alcad')
          .ingot()
          .components('59x aluminium', '1x copper', '1x manganese', '1x magnesium')
-         .color(A9D5D6)
+         .color(0xA9D5D6)
          .flags(plates, rod, small_gear, long_rod, rotor, bolt_and_screw)
          .flags(electrolyze)
-         .iconSet(SHINY)
+         .iconSet(SHINY);
 
          event.create('fluxated_electrumium')
 
