@@ -25,6 +25,7 @@ ServerEvents.recipes(event => {
         'thermalendergy:melodium_block', 'thermalendergy:prismalium_block', 'thermalendergy:stellarium_block', 'thermalendergy:melodium_nugget', 'thermalendergy:prismalium_nugget','thermalendergy:stellarium_nugget',
         'exdeorum:golden_mesh', 'enderio:energy_conduit'
     ];
+
     const toRemoveId = ['thermal:slime_mushroom_spores', 'thermal_extra:sticky_ball_to_paper', 'farmersdelight:paper_from_tree_bark',
         'create:pressing/sugar_cane', 'exnihilo:fluid_item/ens_slime', 'gtceu:shaped/good_circuit_board',
         'thermal:rubber_from_vine', 'thermal:rubber_from_dandelion', 'thermal:smelting/cured_rubber_from_smelting',
@@ -39,12 +40,34 @@ ServerEvents.recipes(event => {
         'ae2:network/crafting/molecular_assembler', 'ae2:network/blocks/pattern_providers_interface', 'ae2:network/crafting/cpu_crafting_unit',
         'ae2:network/blocks/energy_energy_acceptor', 'ae2:network/blocks/interfaces_interface', 'ae2:network/blocks/io_condenser',
         'ae2:network/blocks/cell_workbench', 'ae2:network/blocks/spatial_io_port', 'ae2:network/blocks/io_port', 'a2:network/cables/covered_fluix', 'ae2:network/parts/quartz_fiber_part',
-        'ae2:network/cables/glass_fluix', 'exdeorum:barrel_fluid_mixing/blackstone', 'exdeorum:barrel_fluid_mixing/netherrack'
+        'ae2:network/cables/glass_fluix', 'exdeorum:barrel_fluid_mixing/blackstone', 'exdeorum:barrel_fluid_mixing/netherrack',
     ];
 
     const toRemoveType = ['thermal:sawmill', 'thermal:pulverizer', 'thermal:insolator', 'thermal:centrifuge', 'thermal:crucible', 'thermal:chiller', 'thermal:refinery', 'thermal:pyrolyzer',
         'thermal:crystallizer', 'thermal:press', 'thermal:smelter'
     ];
+    
+    const toRemoveOutputHard = ['placehodler'
+    ];
+
+    const toRemoveIdHard = ['exdeorum:crook/silkworm', 'thermal:fire_charge',
+        'create:mixing/brass_ingot', 'exdeorum:barrel_fluid_mixing/stone', 'minecraft:oak_planks', 'minecraft:dark_oak_planks',
+        'minecraft:birch_planks', 'minecraft:spruce_planks', 'minecraft:acacica_planks', 'minecraft:jungle_planks',
+        'minecraft:mangrove_planks', 'minecraft:bambooo_planks', 'minecraft:crimson_planks', 'minecraft:warped_planks',
+        'minecraft:cherry_planks', 'minecraft:bamboo_planks', 'gtceu:shaped/crimson_planks_saw', 'gtceu:shaped/warped_planks_saw', 'gtceu:shaped/mangrove_planks_saw',
+        'gtceu:shaped/cherry_planks_saw', 'gtceu:shaped/jungle_planks_saw', 'gtceu:shaped/birch_planks_saw', 'gtceu:shaped/dark_oak_planks_saw',
+        'gtceu:shaped/oak_planks_saw', 'gtceu:shaped/spruce_planks_saw', 'gtceu:shaped/bamboo_planks_saw', 
+        'gtceu:shaped/acacia_planks_saw'
+    ];
+
+    //if packmode is hard then const = blah blah else do the rest of the code
+    toRemoveIdHard.forEach(element =>{
+        toRemoveId.push(element)
+    });
+
+    toRemoveOutputHard.forEach(element=>{
+        toRemoveOutput.push(element)
+    });
 
     toRemoveOutput.forEach(element => {
         event.remove({ output: element});
@@ -90,15 +113,6 @@ ServerEvents.recipes(event => {
     event.remove({ input: 'minecraft:ancient_debris'});
     event.remove({ output: 'minecraft:netherite_ingot'});
     event.remove({ id: 'gtceu:centrifuge/magma_cream_separation'}); 
+  
 
-    //packmode thingy
-
-    event.remove({id: 'exdeorum:crook/silkworm'});
-    event.remove({id: 'gtceu:shapeless/dust_bronze'});
-    event.remove({id: 'gtceu:shapeless/dust_brass'});
-    event.remove({id: 'thermal:fire_charge'});
-    event.remove({id: 'create:mixing/brass_ingot'});
-    event.remove({id: 'exdeorum:barrel_fluid_mixing/stone'});
-    event.remove({id: 'gtceu:smelting/smelt_dust_galvanized_steel_to_ingot'});
-    event.remove({id: 'thermal:flax_seeds'});
 });

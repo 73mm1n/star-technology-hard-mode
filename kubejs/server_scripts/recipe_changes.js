@@ -399,6 +399,30 @@ ServerEvents.recipes(event => {
             .duration(120)
             .EUt(8);
     
+    //if packmode hard then 
+
+    function planke1d(output, Logs) {
+        event.shapeless(
+            Item.of(output, 1), 
+            [Logs]
+          )
+    }
+    planke1d('minecraft:oak_planks','#minecraft:oak_logs');
+    planke1d('minecraft:dark_oak_planks','#minecraft:dark_oak_logs');
+    planke1d('minecraft:birch_planks','#minecraft:birch_logs');
+    planke1d('minecraft:spruce_planks','#minecraft:spruce_logs');
+    planke1d('minecraft:cherry_planks','#minecraft:cherry_logs');
+    planke1d('minecraft:mangrove_planks','#minecraft:mangrove_logs');
+    planke1d('minecraft:jungle_planks','#minecraft:jungle_logs');
+    planke1d('minecraft:crimson_planks','#minecraft:crimson_stems');
+    planke1d('minecraft:warped_planks','#minecraft:warped_stems');
+    planke1d('minecraft:bamboo_planks','#minecraft:bamboo_blocks');
+
+    function placke2d(output, Logs) {
+        event.shaped(output,
+
+        )
+    }
 
 });
 
