@@ -2,28 +2,6 @@
 function elementRegistry(func) { GTCEuStartupEvents.registry('gtceu:element', func); };
 function materialRegistry(func) { GTCEuStartupEvents.registry('gtceu:material', func); };
 
-function VHA(voltage) {
-        let v;
-        switch(voltage) {
-            case 'ulv': v = GTValues.VHA[GTValues.ULV]; break;
-            case 'lv': v = GTValues.VHA[GTValues.LV]; break;
-            case 'mv': v = GTValues.VHA[GTValues.MV]; break;
-            case 'hv': v = GTValues.VHA[GTValues.HV]; break;
-            case 'ev': v = GTValues.VHA[GTValues.EV]; break;
-            case 'iv': v = GTValues.VHA[GTValues.IV]; break;
-            case 'luv': v = GTValues.VHA[GTValues.LuV]; break;
-            case 'zpm': v = GTValues.VHA[GTValues.ZPM]; break;
-            case 'uv': v = GTValues.VHA[GTValues.UV]; break;
-            case 'uhv': v = GTValues.VHA[GTValues.UHV]; break;
-            case 'uev': v = GTValues.VHA[GTValues.UEV]; break;
-            case 'uiv': v = GTValues.VHA[GTValues.UIV]; break;
-            case 'uxv': v = GTValues.VHA[GTValues.UXV]; break;
-            case 'opv': v = GTValues.VHA[GTValues.OpV]; break;
-            case 'max': v = GTValues.VHA[GTValues.MAX]; break;
-        }
-        return V;
-    }
-
 materialRegistry(event => {
 
         // Hard Mode Mats
@@ -67,7 +45,7 @@ materialRegistry(event => {
                 .color(0x954EAA)
                 .flags(plates, ring, rod, gear, small_gear, long_rod, rotor, bolt_and_screw, no_decomp)
                 .iconSet(METALLIC)
-                .blastTemp(2950, 'low', VHA('EV'), 2600);
+                .blastTemp(2950, 'low', VA('EV'), 2600);
 
         //Tungsten Cubide Line
 
@@ -86,40 +64,40 @@ materialRegistry(event => {
                 .color(0x63BE95)
                 .flags(plates, ring, rod, gear, small_gear, long_rod, rotor, bolt_and_screw, round, frame, no_decomp)
                 .iconSet(RADIOACTIVE)
-                .blastTemp(5150, 'highest', VHA('LuV'), 2200);
+                .blastTemp(5150, 'highest', VA('LuV'), 2200);
 
-        //EuCdNq+- Line
+        //EuCdNq+| Line
 
-        event.create('ionized', -1, -1, -1, null, 'Ion', false);
+        event.create('ionized', -1, -1, -1, null, '|', false);
 
         event.create('europium_cadmium_ionized_enriched_naquadah')
                 .ingot()
                 .components('europium_cadmium_enriched_naquadah', 'ionized')
-                .color(0xB4FEE2)
+                .color(0xA0F3D4)
                 .flags(plates, ring, rod, gear, small_gear, long_rod, rotor, bolt_and_screw, round, frame, no_decomp)
                 .iconSet(RADIOACTIVE);
 
         event.create('polarized_europium_cadmium_enriched_naquadah')
                 .ingot()
                 .components('5x europium', '3x cadmium', '5x enriched_naquadah')
-                .color(0xB6Fee3)
+                .color(0xB4FEE2)
                 .flags(no_decomp)
                 .iconSet(RADIOACTIVE, MAGNETIC)
 
         event.create('europium_cadmium_enriched_naquadah')
                 .ingot()
                 .components('5x europium', '3x cadmium', '5x enriched_naquadah')
-                .color(0xB6Fee3)
+                .color(0xB4FEE2)
                 .flags(no_decomp)
                 .iconSet(RADIOACTIVE)
 
         event.create('hot_europium_cadmium_enriched_naquadah')
                 .ingot()
                 .components('5x europium', '3x cadmium', '5x enriched_naquadah')
-                .color(0xB6Fee3)
+                .color(0xB4FEE2)
                 .flags(no_decomp)
                 .iconSet(RADIOACTIVE)
-                .blastTemp(7000, 'highest', VHA('ZPM'), 2800);
+                .blastTemp(7000, 'highest', VA('ZPM'), 2800);
 
         //Ttt line
 
