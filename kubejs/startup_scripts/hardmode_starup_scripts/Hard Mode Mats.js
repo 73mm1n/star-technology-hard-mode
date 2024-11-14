@@ -1,4 +1,29 @@
 
+function elementRegistry(func) { GTCEuStartupEvents.registry('gtceu:element', func); };
+function materialRegistry(func) { GTCEuStartupEvents.registry('gtceu:material', func); };
+
+function VHA(voltage) {
+        let v;
+        switch(voltage) {
+            case 'ulv': v = GTValues.VHA[GTValues.ULV]; break;
+            case 'lv': v = GTValues.VHA[GTValues.LV]; break;
+            case 'mv': v = GTValues.VHA[GTValues.MV]; break;
+            case 'hv': v = GTValues.VHA[GTValues.HV]; break;
+            case 'ev': v = GTValues.VHA[GTValues.EV]; break;
+            case 'iv': v = GTValues.VHA[GTValues.IV]; break;
+            case 'luv': v = GTValues.VHA[GTValues.LuV]; break;
+            case 'zpm': v = GTValues.VHA[GTValues.ZPM]; break;
+            case 'uv': v = GTValues.VHA[GTValues.UV]; break;
+            case 'uhv': v = GTValues.VHA[GTValues.UHV]; break;
+            case 'uev': v = GTValues.VHA[GTValues.UEV]; break;
+            case 'uiv': v = GTValues.VHA[GTValues.UIV]; break;
+            case 'uxv': v = GTValues.VHA[GTValues.UXV]; break;
+            case 'opv': v = GTValues.VHA[GTValues.OpV]; break;
+            case 'max': v = GTValues.VHA[GTValues.MAX]; break;
+        }
+        return V;
+    }
+
 materialRegistry(event => {
 
         // Hard Mode Mats
