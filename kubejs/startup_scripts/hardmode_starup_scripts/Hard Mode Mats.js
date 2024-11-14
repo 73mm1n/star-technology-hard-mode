@@ -293,14 +293,14 @@ materialRegistry(event => {
                 .components('5x europium', '3x cadmium', '5x enriched_naquadah')
                 .color(0xB4FEE2)
                 .flags(no_decomp)
-                .iconSet(RADIOACTIVE, MAGNETIC)
+                .iconSet(RADIOACTIVE, MAGNETIC);
 
         event.create('europium_cadmium_enriched_naquadah')
                 .ingot()
                 .components('5x europium', '3x cadmium', '5x enriched_naquadah')
                 .color(0xB4FEE2)
                 .flags(no_decomp)
-                .iconSet(RADIOACTIVE)
+                .iconSet(RADIOACTIVE);
 
         event.create('hot_europium_cadmium_enriched_naquadah')
                 .ingot()
