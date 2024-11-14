@@ -244,8 +244,7 @@ materialRegistry(event => {
                 .color(0xEEDD9A)
                 .iconSet(SHINY)
                 .blastTemp(2100, 'low', VA('hv'), 1500)
-                .flags(foil, gear, long_rod, plates,
-                        rod, rotor, small_gear, ring, frame)
+                .flags(foil, gear, long_rod, plates, rod, rotor, small_gear, ring, frame)
                 .cableProperties(V('hv'), 16, 0, true);
 
         //Titanium Enriched Galvanized Line
