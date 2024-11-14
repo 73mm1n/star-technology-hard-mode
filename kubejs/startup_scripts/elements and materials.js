@@ -580,9 +580,9 @@ materialRegistry(event => {
         .fluid()
         .components('35x steel', '10x chromium', '4x nickel', '1x manganese', '1x silicon')
         .color(0x800040)
-        .blastTemp(3500, 'low', VA('ev'), 1500)
+        .blastTemp(2600, 'low', VA('hv'), 6000)
         .iconSet(METALLIC)
-        .flags(plates, rod, frame);
+        .flags(plates, rod, long_rod, frame, bolt_and_screw, small_gear, rotor);
 
     event.create('inconel_625')
         .ingot()
