@@ -524,7 +524,7 @@ materialRegistry(event => {
         .flags(foil, gear, long_rod, plates,
             rod, rotor, small_gear, ring, frame)
         .cableProperties(V('luv'), 64, 0, true)
-        .rotorStats(400, 200, 3, 24000);
+        .rotorStats(290, 180, 3, 24000);
 
     event.create('dragonsteel')
         .ingot(1)
@@ -536,7 +536,7 @@ materialRegistry(event => {
         .flags(foil, gear, long_rod, plates,
             rod, rotor, small_gear, ring, frame)
         .cableProperties(V('zpm'), 64, 0, true)
-        .rotorStats(800, 400, 3, 32000);
+        .rotorStats(340, 280, 3, 32000);
 
     event.create('prismalium')
         .ingot(1)
@@ -548,7 +548,7 @@ materialRegistry(event => {
         .flags(foil, gear, long_rod, plates,
             rod, rotor, small_gear, ring, frame)
         .cableProperties(V('uv'), 32, 0, true)
-        .rotorStats(1600, 800, 3, 48000);
+        .rotorStats(390, 270, 3, 48000);
 
     event.create('melodium')
         .ingot(1)
@@ -560,7 +560,7 @@ materialRegistry(event => {
         .flags(foil, gear, long_rod, plates,
             rod, rotor, small_gear, ring, frame)
         .cableProperties(V('uv'), 256, 0, true)
-        .rotorStats(3200, 1600, 3, 64000);
+        .rotorStats(440, 290, 3, 64000);
 
     event.create('stellarium')
         .ingot(1)
@@ -572,7 +572,7 @@ materialRegistry(event => {
         .flags(foil, gear, long_rod, plates,
             rod, rotor, small_gear, ring, frame)
         .cableProperties(V('uhv'), 512, 0, true)
-        .rotorStats(6400, 3200, 3, 96000);
+        .rotorStats(510, 340, 3, 96000);
 
     // Nuclear Reactor Materials
     event.create('austenitic_stainless_steel_304')
