@@ -47,7 +47,7 @@ ServerEvents.recipes(event => {
         'thermal:crystallizer', 'thermal:press', 'thermal:smelter'
     ];
     
-    const toRemoveOutputHard = ['placehodler'
+    const toRemoveOutputHard = ['placeholder'
     ];
 
     const toRemoveIdHard = ['exdeorum:crook/silkworm', 'thermal:fire_charge',
@@ -57,7 +57,10 @@ ServerEvents.recipes(event => {
         'minecraft:cherry_planks', 'minecraft:bamboo_planks', 'gtceu:shaped/crimson_planks_saw', 'gtceu:shaped/warped_planks_saw', 'gtceu:shaped/mangrove_planks_saw',
         'gtceu:shaped/cherry_planks_saw', 'gtceu:shaped/jungle_planks_saw', 'gtceu:shaped/birch_planks_saw', 'gtceu:shaped/dark_oak_planks_saw',
         'gtceu:shaped/oak_planks_saw', 'gtceu:shaped/spruce_planks_saw', 'gtceu:shaped/bamboo_planks_saw', 
-        'gtceu:shaped/acacia_planks_saw'
+        'gtceu:shaped/acacia_planks_saw', 'create:cutting/stripped_oak_wood', 'create:cutting/stripped_oak_log'
+    ];
+
+    const toRemoveTypeInputHard = [['type','input'], ['gtceu:cutter','#minecraft:logs']
     ];
 
     //if packmode is hard then const = blah blah else do the rest of the code
@@ -68,7 +71,11 @@ ServerEvents.recipes(event => {
     toRemoveOutputHard.forEach(element=>{
         toRemoveOutput.push(element)
     });
-
+    
+    toRemoveTypeInputHard.forEach(element => {
+        event.remove({ type: element[0], input: element[1]});
+    });
+    
     toRemoveOutput.forEach(element => {
         event.remove({ output: element});
     });
@@ -80,6 +87,8 @@ ServerEvents.recipes(event => {
     toRemoveType.forEach(element => {
         event.remove({ type: element});
     });
+
+    
 
     event.remove({ output: /exdeorum:compressed_.*/ });
     event.remove({ output: /exdeorum:.*_compressed_sieve/ });

@@ -385,7 +385,7 @@ ServerEvents.recipes(event => {
     event.recipes.create.item_application('gtceu:t_large_macerator', ['gtceu:hv_macerator', 'kubejs:multiblock_upgrade_kit']);
     event.recipes.create.item_application('gtceu:large_rock_crusher', ['gtceu:hv_rock_crusher', 'kubejs:multiblock_upgrade_kit']);
 
-    //packmode
+    //if packmode hard then 
 
     event.recipes.create.mixing('2x gtceu:galvanized_steel_ingot', ['2x gtceu:steel_ingot', Fluid.of('gtceu:zinc', 144)]).heatRequirement('lowheated');
     event.recipes.create.mixing(Fluid.of('gtceu:copper', 144), ['1x minecraft:copper_ingot', Fluid.of('minecraft:lava', 100)]).heatRequirement('lowheated');
@@ -398,32 +398,65 @@ ServerEvents.recipes(event => {
             .itemOutputs('4x gtceu:galvanized_steel_ingot')
             .duration(120)
             .EUt(8);
+ 
+    const LogTypes = [
+        "oak",
+        "dark_oak",
+        "birch",
+        "spruce",
+        "cherry",
+        "mangrove",
+        "jungle",
+    ];
     
-    //if packmode hard then 
-
-    function planke1d(output, Logs) {
+    function planked1Crafting(output, Logs) {
         event.shapeless(
             Item.of(output, 1), 
             [Logs]
           )
     }
-    planke1d('minecraft:oak_planks','#minecraft:oak_logs');
-    planke1d('minecraft:dark_oak_planks','#minecraft:dark_oak_logs');
-    planke1d('minecraft:birch_planks','#minecraft:birch_logs');
-    planke1d('minecraft:spruce_planks','#minecraft:spruce_logs');
-    planke1d('minecraft:cherry_planks','#minecraft:cherry_logs');
-    planke1d('minecraft:mangrove_planks','#minecraft:mangrove_logs');
-    planke1d('minecraft:jungle_planks','#minecraft:jungle_logs');
-    planke1d('minecraft:crimson_planks','#minecraft:crimson_stems');
-    planke1d('minecraft:warped_planks','#minecraft:warped_stems');
-    planke1d('minecraft:bamboo_planks','#minecraft:bamboo_blocks');
+ 
+    function planked2Cutter(output, Logs, type) {
+        event.recipes.gtceu.cutter('LogToPlanksWater'+ type )
+            .itemInputs(Logs)
+            .inputFluids('minecraft:water 4')
+            .itemOutputs('2x ' + output, '6x gtceu:tiny_wood_dust')
+            .duration(400)
+            .EUt(7);
+         event.recipes.gtceu.cutter('LogToPlanksDistilledWater'+ type)
+             .itemInputs(Logs)
+             .inputFluids('gtceu:distilled_water 3')
+             .itemOutputs('2x ' + output, '6x gtceu:tiny_wood_dust')
+             .duration(300)
+             .EUt(7);
+         event.recipes.gtceu.cutter('LogToPlanksLubricant'+ type)
+             .itemInputs(Logs)
+             .inputFluids('gtceu:lubricant 1')
+             .itemOutputs('2x ' + output, '6x gtceu:tiny_wood_dust')
+             .duration(200)
+             .EUt(7);
+    };
 
-    function placke2d(output, Logs) {
-        event.shaped(output,
-
-        )
+    function planked2Saw(output, Logs) {
+        event.shaped(output, [
+            'S',
+            'L'
+        ], {
+             L: Logs,
+             S: '#forge:tools/saws'
+        })
     }
 
+    planked2Cutter('minecraft:bamboo_planks','#minecraft:bamboo_blocks');
+    planked2Saw('minecraft:bamboo_planks','#minecraft:bamboo_blocks');
+    planked1Crafting('minecraft:bamboo_planks','#minecraft:bamboo_blocks');
+    
+    LogTypes.forEach(log => {
+            planked1Crafting(`minecraft:${log}_planks`,`#minecraft:${log}_logs`);
+            planked2Saw(`minecraft:${log}_planks`,`#minecraft:${log}_logs`);
+            planked2Cutter(`minecraft:${log}_planks`,`#minecraft:${log}_logs`,log);
+        }
+    )
 });
 
 BlockEvents.rightClicked('minecraft:grass_block', event => {
