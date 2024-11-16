@@ -276,34 +276,11 @@ materialRegistry(event => {
                 .iconSet(RADIOACTIVE)
                 .blastTemp(5150, 'highest', VA('LuV'), 2200);
 
-        //EuCdNq+| Line
+        //Hyper Nq+ Line
 
-        event.create('ionized', -1, -1, -1, null, '!i', false);
-
-        event.create('europium_cadmium_ionized_enriched_naquadah')
+        event.create('hyper_enriched_naquadah')
                 .ingot()
-                .components('europium_cadmium_enriched_naquadah', 'ionized')
-                .color(0xA0F3D4)
-                .flags(plates, ring, rod, gear, small_gear, long_rod, rotor, bolt_and_screw, round, frame, no_decomp)
-                .iconSet(RADIOACTIVE);
-
-        event.create('polarized_europium_cadmium_enriched_naquadah')
-                .ingot()
-                .components('5x europium', '3x cadmium', '5x enriched_naquadah')
-                .color(0xB4FEE2)
-                .flags(no_decomp)
-                .iconSet(RADIOACTIVE, MAGNETIC);
-
-        event.create('europium_cadmium_enriched_naquadah')
-                .ingot()
-                .components('5x europium', '3x cadmium', '5x enriched_naquadah')
-                .color(0xB4FEE2)
-                .flags(no_decomp)
-                .iconSet(RADIOACTIVE);
-
-        event.create('hot_europium_cadmium_enriched_naquadah')
-                .ingot()
-                .components('5x europium', '3x cadmium', '5x enriched_naquadah')
+                .components('2x caesium, 3x cerium, 5x enriched_naquadah')
                 .color(0xB4FEE2)
                 .flags(no_decomp)
                 .iconSet(RADIOACTIVE)
