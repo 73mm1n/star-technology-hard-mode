@@ -1,4 +1,4 @@
-const $RockBreakerCondition = Java.loadClass('com.gregtechceu.gtceu.common.recipe.RockBreakerCondition')  
+// const $RockBreakerCondition = Java.loadClass('com.gregtechceu.gtceu.common.recipe.RockBreakerCondition')  
 
 ServerEvents.recipes(event => {
 
@@ -25,9 +25,12 @@ ServerEvents.recipes(event => {
         'gtceu:wrought_iron_screw'
     );
 
-    event.recipes.create.mixing('3x gtceu:bronze_ingot', ['3x minecraft:copper_ingot', '#forge:ingots/tin']).heatRequirement('lowheated');
-    event.recipes.create.mixing('1x gtceu:red_alloy_ingot', ['minecraft:copper_ingot', '4x minecraft:redstone']).heatRequirement('lowheated');
-    event.recipes.create.mixing('3x gtceu:brass_ingot', ['3x minecraft:copper_ingot', '#forge:ingots/zinc']).heatRequirement('lowheated');
+    //event.recipes.create.mixing('3x gtceu:bronze_ingot', ['3x minecraft:copper_ingot', '#forge:ingots/tin']).heatRequirement('lowheated');
+    //event.recipes.create.mixing('1x gtceu:red_alloy_ingot', ['minecraft:copper_ingot', '4x minecraft:redstone']).heatRequirement('lowheated');
+    //event.recipes.create.mixing('3x gtceu:brass_ingot', ['3x minecraft:copper_ingot', '#forge:ingots/zinc']).heatRequirement('lowheated');
+    //event.recipes.create.mixing('2x gtceu:invar_ingot', ['2x minecraft:iron_ingot', '#forge:ingots/nickel']).heatRequirement('lowheated');
+    //event.recipes.create.mixing('1x gtceu:soul_infused_ingot', ['2x thermal_extra:soul_sand_dust', '#forge:ingots/invar']).heatRequirement('lowheated');
+    // again pack mode stuffs
 
     event.shaped(Item.of('gtceu:wood_plate'), [
         'SSS'
@@ -200,9 +203,9 @@ ServerEvents.recipes(event => {
         .itemOutputs('minecraft:blackstone')
         .duration(16)
         .EUt(7)
-        ["addData(java.lang.String,java.lang.String)"]("fluidA", "minecraft:lava")
-        ["addData(java.lang.String,java.lang.String)"]("fluidB", "minecraft:water")
-        .addCondition($RockBreakerCondition.INSTANCE);
+        .addDataString("fluidA", "minecraft:lava")
+        .addDataString("fluidB", "minecraft:water");
+        // .addCondition($RockBreakerCondition.INSTANCE);
 
     event.shaped(Item.of('create_new_age:carbon_brushes'), [
         'SCS',
@@ -298,7 +301,7 @@ ServerEvents.recipes(event => {
         .itemOutputs('10x gtceu:birmabright_dust')
         .duration(350)
         .EUt(GTValues.VHA[GTValues.HV])
-        .circuit(1);
+        .circuit(3);
 
     event.recipes.gtceu.mixer('duralumin')
         .itemInputs('4x gtceu:aluminium_dust', '3x gtceu:copper_dust', '1x gtceu:magnesium_dust', '1x gtceu:manganese_dust')
@@ -360,7 +363,7 @@ ServerEvents.recipes(event => {
         .itemOutputs('27x gtceu:tumbaga_dust')
         .duration(470)
         .EUt(GTValues.VHA[GTValues.HV])
-        .circuit(3);
+        .circuit(4);
 
     event.recipes.gtceu.assembler('multiblock_upgrade_kit')
         .itemInputs('thermal:lumium_glass', '#gtceu:circuits/ev', '2x gtceu:double_signalum_plate', '12x gtceu:cobalt_foil')
@@ -382,4 +385,39 @@ ServerEvents.recipes(event => {
     event.recipes.create.item_application('gtceu:t_large_macerator', ['gtceu:hv_macerator', 'kubejs:multiblock_upgrade_kit']);
     event.recipes.create.item_application('gtceu:large_rock_crusher', ['gtceu:hv_rock_crusher', 'kubejs:multiblock_upgrade_kit']);
 
+    //packmode
+
+    event.recipes.create.mixing('2x gtceu:galvanized_steel_ingot', ['2x gtceu:steel_ingot', Fluid.of('gtceu:zinc', 144)]).heatRequirement('lowheated');
+    event.recipes.create.mixing(Fluid.of('gtceu:copper', 144), ['1x minecraft:copper_ingot', Fluid.of('minecraft:lava', 100)]).heatRequirement('lowheated');
+    event.recipes.create.mixing(Fluid.of('gtceu:zinc', 144), ['1x gtceu:zinc_ingot', Fluid.of('minecraft:lava', 100)]).heatRequirement('lowheated');
+    event.recipes.create.mixing(Fluid.of('gtceu:tin', 144), ['1x gtceu:tin_ingot', Fluid.of('minecraft:lava', 100)]).heatRequirement('lowheated');
+    
+    event.recipes.gtceu.mixer('galvanized_steel_mixer')
+            .itemInputs('3x gtceu:steel_ingot')
+            .inputFluids('gtceu:zinc 144')
+            .itemOutputs('4x gtceu:galvanized_steel_ingot')
+            .duration(120)
+            .EUt(8);
+    
+
 });
+
+BlockEvents.rightClicked('minecraft:grass_block', event => {
+    if (event.player.isCrouching() && event.player.getMainHandItem() == null) {
+        if (Math.random() < 0.18) {
+            event.block.popItemFromFace(Item.of('exdeorum:stone_pebble'), 'up');
+        }
+        if (Math.random() < 0.13) {
+            event.block.popItemFromFace(Item.of('exdeorum:andesite_pebble'), 'up');
+        }
+        if (Math.random() < 0.12) {
+            event.block.popItemFromFace(Item.of('exdeorum:granite_pebble'), 'up');
+        }
+        if (Math.random() < 0.12) {
+            event.block.popItemFromFace(Item.of('exdeorum:diorite_pebble'), 'up');
+        }
+        if (Math.random() < 0.0001) {
+            event.block.popItemFromFace(Item.of('minecraft:cookie'), 'up');
+        }
+    }
+})
