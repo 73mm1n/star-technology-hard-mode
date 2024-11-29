@@ -1,7 +1,7 @@
 
 ServerEvents.recipes(event => {
 
-    event.shaped(Item.of('enderio:travel_anchor'), [
+    event.shaped(Item.of('travelanchors:travel_anchor'), [
         'DSD',
         'SPS',
         'DSD'
@@ -11,7 +11,7 @@ ServerEvents.recipes(event => {
         P: 'minecraft:ender_pearl'
     });
 
-    event.shaped(Item.of('enderio:staff_of_travelling'), [
+    event.shaped(Item.of('travelanchors:travel_staff'), [
         '  P',
         ' R ',
         'R  '

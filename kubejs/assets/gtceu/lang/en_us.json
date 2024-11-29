@@ -363,14 +363,14 @@
     "block.gtceu.leptonic_convergence_injector.tooltip.0": "§a§lAkreyrium §a§lProcessing",
     "block.gtceu.leptonic_convergence_injector.tooltip.1": "§7A high-density synthesis unit designed to inject, compress and align the leptonic structures of materials utilising a suitable catalyst. through this process, the material is transformed into a lepton-dense form, which is optimised for advanced applications.",
     "gtceu.leptonic_convergence_injector": "Leptonic Convergence Injector",
-
-    "block.gtceu.folding_akreyrium_stabiliser": "Folding Akreyrium Stabiliser",
-    "block.gtceu.folding_akreyrium_stabiliser.tooltip.0": "§a§lAkreyrium §a§lProcessing",
-    "block.gtceu.folding_akreyrium_stabiliser.tooltip.1": "§7A reintegration device designed to recombine Akreyrium. By folding the distinct variants of Akreyrium through a precise stabilization matrix over a crystal, a highly refined and pure version of Akreyrium can be obtained.",
-    "block.gtceu.folding_akreyrium_stabiliser.tooltip.2": "§6Stabilisation Matrix Lens:",
-    "block.gtceu.folding_akreyrium_stabiliser.tooltip.3": "§7The folding stabiliser utilises a lens to focus the reintegration, The proper type should be chosen based on the Akreyrium variant, reinsertion is necessary after every use.",
-    "gtceu.folding_akreyrium_stabiliser": "Folding Akreyrium Stabiliser",
-
-    //Hard Mode
+    
     "material.gtceu.galvanized_steel": "Galvanized Steel",
+    "material.gtceu.alcad": "Alcad",
+    "material.gtceu.fluxated_electrumium": "Fluxated Electrumium",
+    "material.gtceu.titanium_enriched_galvanized_steel": "Titanium Enriched Galvanized Steel",
+    "material.gtceu.tungsten_cubide": "Tungsten Cubide",
+    "material.gtceu.URPI_alloy": "URPI Alloy",
+    "material.gtceu.hyper_enriched_naquadah": "Hyper Enriched Naquadah"
+
+
 }
