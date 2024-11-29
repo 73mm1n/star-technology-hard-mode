@@ -3,28 +3,28 @@ ServerEvents.recipes(event => {
     // Upgrade augments
     event.recipes.gtceu.assembler('lv_kit')
         .itemInputs('4x gtceu:invar_plate', 'thermal:obsidian_glass', 'gtceu:bronze_gear', '#gtceu:circuits/lv')
-        .itemOutputs(Item.of('kubejs:lv_upgrade_kit', '{AugmentData:{BaseMod:4.0f,Type:"Upgrade"}}'))
+        .itemOutputs(Item.of('kubejs:lv_upgrade_kit', '{AugmentData:{BaseMod:2f,Type:"Upgrade"}}'))
         .duration(600)
         .EUt(28);
 
     event.recipes.gtceu.assembler('mv_kit')
         .itemInputs('4x gtceu:electrum_plate', 'thermal:signalum_glass', 'gtceu:steel_gear', '#gtceu:circuits/mv')
         .inputFluids('gtceu:redstone 720')
-        .itemOutputs(Item.of('kubejs:mv_upgrade_kit', '{AugmentData:{Type: Upgrade, BaseMod:16f}}'))
+        .itemOutputs(Item.of('kubejs:mv_upgrade_kit', '{AugmentData:{Type: Upgrade, BaseMod:4f}}'))
         .duration(600)
         .EUt(112);
 
     event.recipes.gtceu.assembler('hv_kit')
         .itemInputs('4x gtceu:lumium_plate', 'thermal:lumium_glass', 'gtceu:aluminium_gear', '#gtceu:circuits/hv')
         .inputFluids('gtceu:glowstone 720')
-        .itemOutputs(Item.of('kubejs:hv_upgrade_kit', '{AugmentData:{Type: Upgrade, BaseMod:64f}}'))
+        .itemOutputs(Item.of('kubejs:hv_upgrade_kit', '{AugmentData:{Type: Upgrade, BaseMod:8f}}'))
         .duration(600)
         .EUt(496);
 
     event.recipes.gtceu.assembler('ev_kit')
         .itemInputs('4x gtceu:soul_infused_plate', 'thermal:enderium_glass', 'gtceu:stainless_steel_gear', '#gtceu:circuits/ev')
         .inputFluids('thermal:ender 750')
-        .itemOutputs(Item.of('kubejs:ev_upgrade_kit', '{AugmentData:{Type: Upgrade, BaseMod:256f}}'))
+        .itemOutputs(Item.of('kubejs:ev_upgrade_kit', '{AugmentData:{Type: Upgrade, BaseMod:16f}}'))
         .duration(600)
         .EUt(1625);
 
