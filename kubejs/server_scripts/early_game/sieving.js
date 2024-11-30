@@ -1,5 +1,6 @@
+
 ServerEvents.recipes(event => {
-const dirt = 'minecraft:dirt';
+    const dirt = 'minecraft:dirt';
     const gravel = 'minecraft:gravel';
     const sand = 'minecraft:sand';
     const dust = 'exnihilosequentia:dust';

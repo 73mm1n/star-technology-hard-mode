@@ -25,12 +25,17 @@ ServerEvents.recipes(event => {
         'gtceu:wrought_iron_screw'
     );
 
-    //event.recipes.create.mixing('3x gtceu:bronze_ingot', ['3x minecraft:copper_ingot', '#forge:ingots/tin']).heatRequirement('lowheated');
-    //event.recipes.create.mixing('1x gtceu:red_alloy_ingot', ['minecraft:copper_ingot', '4x minecraft:redstone']).heatRequirement('lowheated');
-    //event.recipes.create.mixing('3x gtceu:brass_ingot', ['3x minecraft:copper_ingot', '#forge:ingots/zinc']).heatRequirement('lowheated');
-    //event.recipes.create.mixing('2x gtceu:invar_ingot', ['2x minecraft:iron_ingot', '#forge:ingots/nickel']).heatRequirement('lowheated');
-    //event.recipes.create.mixing('1x gtceu:soul_infused_ingot', ['2x thermal_extra:soul_sand_dust', '#forge:ingots/invar']).heatRequirement('lowheated');
-    // again pack mode stuffs
+     // again pack mode stuffs
+    event.recipes.create.mixing('3x gtceu:bronze_ingot', ['3x minecraft:copper_ingot', '#forge:ingots/tin']).heatRequirement('lowheated');
+    event.recipes.create.mixing('1x gtceu:red_alloy_ingot', ['minecraft:copper_ingot', '4x minecraft:redstone']).heatRequirement('lowheated');
+    event.recipes.create.mixing('3x gtceu:brass_ingot', ['3x minecraft:copper_ingot', '#forge:ingots/zinc']).heatRequirement('lowheated');
+    event.recipes.create.mixing('2x gtceu:invar_ingot', ['2x minecraft:iron_ingot', '#forge:ingots/nickel']).heatRequirement('lowheated');
+    event.recipes.create.mixing('1x gtceu:soul_infused_ingot', ['2x thermal_extra:soul_sand_dust', '#forge:ingots/invar']).heatRequirement('lowheated');
+   
+    event.replaceInput({ id: 'gtceu:macerator/macerate_nether_star_lens' },
+        '#forge:lenses/white',
+        'gtceu:nether_star_lens'
+    );
 
     event.shaped(Item.of('gtceu:wood_plate'), [
         'SSS'
@@ -282,11 +287,10 @@ ServerEvents.recipes(event => {
         R: 'gtceu:rubber_plate'
     });
 
-    event.recipes.create.pressing('gtceu:lead_plate', 'gtceu:lead_ingot');
-    event.recipes.create.pressing('gtceu:silver_plate', 'gtceu:silver_ingot');
-    event.recipes.create.pressing('gtceu:tin_plate', 'gtceu:tin_ingot');
-    event.recipes.create.pressing('gtceu:zinc_plate', 'gtceu:zinc_ingot');
-    event.recipes.create.pressing('gtceu:bronze_plate', 'gtceu:bronze_ingot');
+    //plates
+    ['lead','silver','tin','zinc','bronze','red_alloy','nickel','invar','soul_infused','cobalt_brass','wrought_iron'].forEach(type => {
+        event.recipes.create.pressing(`gtceu:${type}_plate`,`gtceu:${type}_ingot`);
+    });
   
     event.replaceInput({id: 'enderchests:ender_pouch'}, 'minecraft:leather', 'gtceu:carbon_fiber_plate');
     event.shaped(Item.of('create_new_age:netherite_magnet'), [

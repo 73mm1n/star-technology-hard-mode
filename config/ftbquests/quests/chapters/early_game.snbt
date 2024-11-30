@@ -197,10 +197,7 @@
 				{
 					count: 4L
 					id: "18540F033A0DC299"
-					item: {
-						Count: 4
-						id: "exnihilosequentia:stone_pebble"
-					}
+					item: { Count: 4, id: "exnihilosequentia:stone_pebble" }
 					type: "item"
 				}
 				{
@@ -229,10 +226,7 @@
 				{
 					count: 4L
 					id: "059DCAFCCFDED10B"
-					item: {
-						Count: 4
-						id: "exnihilosequentia:blackstone_pebble"
-					}
+					item: { Count: 4, id: "exnihilosequentia:blackstone_pebble" }
 					type: "item"
 				}
 				{
