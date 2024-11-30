@@ -1,6 +1,9 @@
 
 ServerEvents.recipes(event => {
 
+    event.remove({output: 'travelanchors:travel_anchor'});
+    event.remove({output: 'travelanchors:travel_staff'});
+
     event.shaped(Item.of('travelanchors:travel_anchor'), [
         'DSD',
         'SPS',

@@ -139,10 +139,6 @@ StartupEvents.registry('item', event => {
         .displayName('Multiblock Upgrade Kit')
         .texture('kubejs:item/kits/upgrade_kit');
 
-    event.create('crystallised_akreyrium')
-        .displayName('Crystallised Akreyrium')
-        .texture('kubejs:item/crystallised_akreyrium');
-
     ['basic', 'regular', 'intermediate', 'advanced', 'elite', 'ultimate'].forEach(tier => {
         event.create(`${tier}_energy_core`)
             .displayName(`${tier.charAt(0).toUpperCase() + tier.slice(1)} Energy Core`)
@@ -334,7 +330,7 @@ StartupEvents.registry('block', event => {
         .requiresTool(true)
         .tagBlock("mineable/pickaxe")
         .tagBlock('minecraft:needs_iron_tool')
-        .textureAll('kubejs:block/casings/beryllium_aluminium_alloy_casing');
+        .textureAll('kubejs:block/casings/beryllium-aluminium_casing');
 
     event.create('birmabright_casing')
         .displayName('Birmabright Casing')
@@ -354,7 +350,7 @@ StartupEvents.registry('block', event => {
         .requiresTool(true)
         .tagBlock("mineable/pickaxe")
         .tagBlock('minecraft:needs_iron_tool')
-        .textureAll('kubejs:block/casings/beryllium_bronze_casing');
+        .textureAll('kubejs:block/casings/bizmuth_bronze_casing');
 
     event.create('blue_steel_casing')
         .displayName('Blue Steel Casing')
@@ -394,7 +390,7 @@ StartupEvents.registry('block', event => {
         .requiresTool(true)
         .tagBlock("mineable/pickaxe")
         .tagBlock('minecraft:needs_iron_tool')
-        .textureAll('kubejs:block/casings/hydronalium_casing');
+        .textureAll('kubejs:block/casings/hydronallium_casing');
 
     event.create('kovar_casing')
         .displayName('Kovar Casing')

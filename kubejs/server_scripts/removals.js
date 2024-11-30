@@ -57,11 +57,6 @@ ServerEvents.recipes(event => {
         event.remove({ type: element});
     });
 
-    event.remove({ output: /exnihilosequentia:compressed_.*/ });
-    event.remove({ output: /exnihilosequentia:.*_compressed_sieve/ });
-    event.remove({ id: /minecraft:.*_from_compressed_/ });
-    event.remove({ id: /exnihilosequentia:.*_from_compressed_/ });
-
     event.remove({ input: 'minecraft:fire_charge'});
 
     event.remove({ type: 'exnihilosequentia:sifting', input: '#forge:gravel'});
@@ -81,7 +76,6 @@ ServerEvents.recipes(event => {
     event.remove({ mod: 'extendedcrafting'});
     event.remove({ mod: 'sgjourney'});
     event.remove({ mod: 'jetboots'});
-    event.remove({mod: 'hammerlib'})
 
     event.remove({ output: /nuclearcraft:.*/})
 
@@ -89,16 +83,5 @@ ServerEvents.recipes(event => {
     event.remove({ output: 'minecraft:netherite_scrap'});
     event.remove({ input: 'minecraft:ancient_debris'});
     event.remove({ output: 'minecraft:netherite_ingot'});
-    event.remove({ id: 'gtceu:centrifuge/magma_cream_separation'}); 
-
-    //Packmode thing
-    event.remove({id: 'exnihilosequentia:crook/silkworm'});
-    event.remove({id: 'gtceu:shapeless/dust_bronze'});
-    event.remove({id: 'gtceu:shapeless/dust_brass'});
-    event.remove({id: 'thermal:fire_charge'});
-    event.remove({id: 'create:mixing/brass_ingot'});
-    event.remove({id: 'exnihilosequentia:barrel_fluid_mixing/stone'});
-    event.remove({id: 'gtceu:smelting/smelt_dust_galvanized_steel_to_ingot'});
-    event.remove({id: 'thermal:flax_seeds'});
 
 });
